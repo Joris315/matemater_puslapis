@@ -7,17 +7,12 @@
 	</head>
 	<body>
 		<div class='hero'>
-			<h1>Matematikos korepetitoriai
-			11-12 klasės
-			egzaminams</h1>
+			<h1>Matematikos korepetitoriai 11-12 klasės egzaminams</h1>
 			<button>Registruokis</button>
 		</div>
 
 		<div class='forwho'>
 			<h2>Kam galime padėti</h2>
-		<p>
-			Mūsų tikslas - padėti mokinams pasiruošti matematikos valstybiniam brandos egzaminui.
-		</p>
 			<ul>
 				<li>Bijantiems, kad neišlaikys egzamino</li>
 				<li>Nerimaujantiems, kad išlaikys egzaminą ne pakankamai gerai</li>
@@ -28,12 +23,13 @@
 
 		<div class='lessons'>
 			<h2>Kaip vyksta pamokos</h2>
-			<p>
-				Pamokos vyksta gyvai Vilniaus Vytauto Didžiojo gimnazijoje.
-				Vienas mokinys su vienu mokytoju. 
-				Pamoka trunka 60min: 30min mokomės, 5min pailsim, 25min mokomės.
-				Pamokos vyksta savaitgaliais arba darbo dienomis vakare. Tikslų laiką sutarsime užsiregistravus.
-			</p>
+			<ul>
+				<li>Gyvai</li>
+				<li>Vilniaus Vytauto Didžiojo gimanazijoje</li>
+				<li>Vienas mokinys su vienu mokytoju</li>
+				<li>60 min</li>
+			</ul>
+
 			<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=25.28382182121277%2C54.67593397877047%2C25.296707153320316%2C54.67994739123716&amp;layer=hot&amp;marker=54.67793765859524%2C25.29026986002566" style="border: 1px solid black"></iframe><br/>
 		</div>
 
@@ -50,10 +46,8 @@
 			</ul>
 		</div>
 
-		<div >
-			<h2>Kainos</h2>
-
 			<div class='prices'>	
+				<h2>Kainos</h2>
 				<div class='price'>	
 				<h3>Viena savaitinė pamoka</h3>
 				<h3>30€ už pamoką</h3>
@@ -69,8 +63,6 @@
 				<h3>25€ už pamoką</h3>
 				</div>
 			</div>
-
-		</div>
 
 		<!--
 
@@ -89,14 +81,26 @@
 
 		<div class='register'>
 			<h2>Registracija</h2>
-			<form action="/action_page.php">
-  				<label for="fname">Mokinio vardas:</label>
-  				<input type="text" id="fname" name="fname"><br><br>
-  				<label for="lname">El. pašto adresas:</label>
-  				<input type="text" id="lname" name="lname"><br><br>
-  				<label for="lname">Telefono numeris:</label>
-  				<input type="text" id="lname" name="lname"><br><br>
-  				<input type="submit" value="Submit">
+			<form>
+				<label for="name">Mokinio vardas</label>
+				<br>
+  				<input type="text" id="name" name="name">
+				<br>
+				<label for="email">El. paštas</label>
+				<br>
+  				<input type="email" id="email" name="email">
+				<br>
+				<label for="phone">Telefono nr.</label>
+				<br>
+  				<input type="tel" id="phone" name="phone" pattern="[0-9]{9}">
+				<br>
+  				<input type="radio" id="sessions1" name="sessions" value="1">
+				<label for="sessions1">1 kartas per savaitę</label>
+				<br>
+  				<input type="radio" id="sessions2" name="sessions" value="2">
+				<label for="sessions2">2 kartai per savaitę</label>
+				<br>
+  				<input type="submit" value="Pateikti">
 			</form>
 		</div>
 
