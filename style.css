@@ -205,7 +205,7 @@ section {
   background-color: #f3f8f5;
 }
 
-.lessons ol {
+.lessons ul {
   max-width: 800px;
   margin: 0 auto;
   padding-left: 30px;

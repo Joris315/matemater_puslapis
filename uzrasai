@@ -6,3 +6,5 @@ Jiems taip pat reikėtų tarpusavyje raštu susitarti, kuris atsako už registra
 VDAI pabrėžia, kad privatumo informacija turi būti pateikta duomenų gavimo metu, lengvai randama, 
 aiški ir nurodyti duomenų privalomumą, gavėjus, saugojimo laikotarpius bei žmogaus teises. VDAI gairės 
 smulkiajam verslui
+
+Mano rekomendacija: dabar pabaigti ir išmokti šią HTML/CSS/JS versiją, pataisyti nuorodas ir trūkstamą informaciją. Kai pradėsime mokinių paskyras ir duomenų bazę, tada sukurti naują Next.js šaką ir dabartinį dizainą perkelti į komponentus. Taip ne tik gausi veikiančią svetainę, bet ir aiškiai suprasi, kokią problemą React iš tikrųjų išsprendžia.
