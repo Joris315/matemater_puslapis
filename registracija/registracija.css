@@ -1,0 +1,295 @@
+.registration-page {
+  background-color: #f3f8f5;
+}
+
+.registration-intro {
+  padding: 70px 8% 40px;
+  text-align: center;
+}
+
+.registration-intro h1 {
+  margin-bottom: 18px;
+}
+
+.registration-intro p {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.form-section {
+  padding-top: 20px;
+}
+
+#registration-form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+fieldset {
+  margin: 0 0 30px;
+  padding: 30px;
+
+  border: 1px solid #d7e4dc;
+  border-radius: 12px;
+
+  background-color: #ffffff;
+  box-shadow: 0 5px 18px rgba(12, 88, 51, 0.06);
+}
+
+legend {
+  padding: 0 10px;
+
+  color: #0c5833;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #343a40;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid #aebdb4;
+  border-radius: 7px;
+
+  background-color: #ffffff;
+  color: #343a40;
+
+  font: inherit;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0c5833;
+  outline: 3px solid rgba(12, 88, 51, 0.12);
+}
+
+.registration-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.option-card {
+  padding: 20px;
+
+  border: 2px solid #d7e4dc;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.option-card:hover {
+  border-color: #0c5833;
+  background-color: #f3f8f5;
+}
+
+.option-card:has(input:checked) {
+  border-color: #0c5833;
+  background-color: #f3f8f5;
+}
+
+.option-card input {
+  margin-top: 6px;
+  accent-color: #0c5833;
+}
+
+.option-card span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.option-card strong {
+  color: #0c5833;
+  font-size: 18px;
+}
+
+.option-card small {
+  color: #5c6560;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.form-explanation {
+  margin-top: 0;
+  color: #5c6560;
+  font-size: 16px;
+}
+
+.friend-entry {
+  margin-bottom: 20px;
+  padding: 20px;
+
+  border-radius: 8px;
+  background-color: #f3f8f5;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: end;
+  gap: 18px;
+}
+
+.secondary-button,
+.remove-friend-button {
+  padding: 10px 18px;
+
+  border: 2px solid #0c5833;
+  border-radius: 7px;
+
+  background-color: #ffffff;
+  color: #0c5833;
+
+  font: inherit;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background-color: #0c5833;
+  color: #ffffff;
+}
+
+.remove-friend-button {
+  border-color: #a93636;
+  color: #a93636;
+}
+
+.remove-friend-button:hover {
+  background-color: #a93636;
+  color: #ffffff;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.checkbox-option,
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-option {
+  padding: 14px;
+
+  border: 1px solid #d7e4dc;
+  border-radius: 7px;
+}
+
+.checkbox-option input,
+.consent input {
+  margin-top: 6px;
+  accent-color: #0c5833;
+}
+
+.consent {
+  margin-bottom: 18px;
+}
+
+.consent a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.optional {
+  color: #707a74;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.submit-button {
+  width: 100%;
+  cursor: pointer;
+}
+
+.form-message {
+  margin-top: 20px;
+  padding: 18px;
+
+  border-radius: 7px;
+  background-color: #e1f2e7;
+
+  color: #0c5833;
+  text-align: center;
+  font-weight: bold;
+}
+
+.secondary-button:disabled {
+  border-color: #aebdb4;
+  background-color: #e8eeea;
+  color: #707a74;
+  cursor: not-allowed;
+}
+
+@media (max-width: 650px) {
+  .registration-intro {
+    padding: 50px 6% 25px;
+  }
+
+  .form-section {
+    padding-top: 10px;
+  }
+
+  fieldset {
+    padding: 22px 18px;
+  }
+
+  .form-grid,
+  .registration-options,
+  .checkbox-grid,
+  .friend-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .friend-entry {
+    align-items: stretch;
+  }
+
+  .remove-friend-button {
+    width: 100%;
+  }
+
+
+}

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../images/matemater-logo.svg"
+    >
+
+    <title>Registracija | Matemater</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./registracija.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html" class="logo">
+            <img
+                src="../images/matemater-logo.svg"
+                alt="Matemater logotipas"
+            >
+            <span>Matemater</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="../index.html#apie">Apie mus</a>
+            <a href="../index.html#kaina">Kaina</a>
+            <a href="../index.html#kontaktai">Kontaktai</a>
+            <a href="./index.html">Registracija</a>
+        </div>
+    </nav>
+
+    <main class="registration-page">
+
+        <section class="registration-intro">
+            <h1>Registracija į „Matemater“ užsiėmimus</h1>
+
+            <p>
+                Užpildyk registracijos formą. Pagal pateiktą informaciją
+                susisieksime su tavimi ir padėsime pasirinkti tinkamą grupę.
+            </p>
+        </section>
+
+        <section class="form-section">
+
+            <form id="registration-form">
+
+                <fieldset>
+                    <legend>Kaip registruojiesi?</legend>
+
+                    <div class="registration-options">
+
+                        <label class="option-card">
+                            <input
+                                type="radio"
+                                name="registrationType"
+                                value="alone"
+                                checked
+                            >
+
+                            <span>
+                                <strong>Registruojuosi vienas</strong>
+
+                                <small>
+                                    Grupę parinksime pagal tavo klasę,
+                                    matematikos lygį ir tinkamą laiką.
+                                </small>
+                            </span>
+                        </label>
+
+                        <label class="option-card">
+                            <input
+                                type="radio"
+                                name="registrationType"
+                                value="friends"
+                            >
+
+                            <span>
+                                <strong>Registruojuosi su draugais</strong>
+
+                                <small>
+                                    Nurodyk draugus, su kuriais norėtum
+                                    patekti į tą pačią grupę.
+                                </small>
+                            </span>
+                        </label>
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Mokinio informacija</legend>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="first-name">Vardas</label>
+
+                            <input
+                                type="text"
+                                id="first-name"
+                                name="firstName"
+                                autocomplete="given-name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Pavardė</label>
+
+                            <input
+                                type="text"
+                                id="last-name"
+                                name="lastName"
+                                autocomplete="family-name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade">Klasė</label>
+
+                            <select id="grade" name="grade" required>
+                                <option value="">Pasirink klasę</option>
+                                <option value="11">11 klasė</option>
+                                <option value="12">12 klasė</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="math-level">
+                                Matematikos kursas
+                            </label>
+
+                            <select
+                                id="math-level"
+                                name="mathLevel"
+                                required
+                            >
+                                <option value="">Pasirink kursą</option>
+
+                                <option value="bendrasis">
+                                    Bendrasis kursas
+                                </option>
+
+                                <option value="isplestinis">
+                                    Išplėstinis kursas
+                                </option>
+
+                                <option value="nezinau">
+                                    Nežinau
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="average">
+                                Dabartinis matematikos vidurkis
+                            </label>
+
+                            <input
+                                type="number"
+                                id="average"
+                                name="average"
+                                min="1"
+                                max="10"
+                                step="0.1"
+                                placeholder="Pavyzdžiui, 7.5"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefono numeris</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                autocomplete="tel"
+                                placeholder="+370 600 00000"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="email">El. pašto adresas</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="vardas@example.com"
+                                required
+                            >
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <fieldset id="friends-section" hidden>
+                    <legend>Registracija su draugais</legend>
+
+                    <p class="form-explanation">
+                        Kiekvienas mokinys turi užpildyti atskirą
+                        registracijos formą ir nurodyti kitų draugų vardus
+                        bei pavardes. Pasistengsime jus priskirti tai pačiai
+                        grupei, jeigu sutaps klasė, matematikos lygis ir
+                        tinkamas užsiėmimų laikas.
+                    </p>
+
+                    <div id="friends-list">
+
+                        <div class="friend-entry">
+
+                            <div class="form-group">
+                                <label for="friend-first-name-1">
+                                    Draugo vardas
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="friend-first-name-1"
+                                    name="friendFirstName[]"
+                                    class="friend-input"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="friend-last-name-1">
+                                    Draugo pavardė
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="friend-last-name-1"
+                                    name="friendLastName[]"
+                                    class="friend-input"
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="add-friend-button"
+                    >
+                        + Pridėti dar vieną draugą
+                    </button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Kada galėtum lankyti užsiėmimus?</legend>
+
+                    <p class="form-explanation">
+                        Gali pasirinkti kelis tinkamus variantus.
+                    </p>
+
+                    <div class="checkbox-grid">
+
+                        <label class="checkbox-option">
+                            <input
+                                type="checkbox"
+                                name="availableTime"
+                                value="darbo-dienomis-15-17"
+                            >
+                            Darbo dienomis 15:00–17:00
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input
+                                type="checkbox"
+                                name="availableTime"
+                                value="darbo-dienomis-17-19"
+                            >
+                            Darbo dienomis 17:00–19:00
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input
+                                type="checkbox"
+                                name="availableTime"
+                                value="darbo-dienomis-po-19"
+                            >
+                            Darbo dienomis po 19:00
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input
+                                type="checkbox"
+                                name="availableTime"
+                                value="sestadienis"
+                            >
+                            Šeštadienį
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input
+                                type="checkbox"
+                                name="availableTime"
+                                value="sekmadienis"
+                            >
+                            Sekmadienį
+                        </label>
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Mokymosi tikslai</legend>
+
+                    <div class="form-group">
+                        <label for="goal">
+                            Pagrindinis mokymosi tikslas
+                        </label>
+
+                        <select id="goal" name="goal" required>
+                            <option value="">Pasirink tikslą</option>
+
+                            <option value="vbe">
+                                Pasiruošti valstybiniam brandos egzaminui
+                            </option>
+
+                            <option value="vidurkis">
+                                Pagerinti matematikos pažymius
+                            </option>
+
+                            <option value="spragos">
+                                Užpildyti turimas žinių spragas
+                            </option>
+
+                            <option value="pagilinti-zinias">
+                                Pagilinti matematikos žinias
+                            </option>
+
+                            <option value="kita">
+                                Kita
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">
+                            Papildomas komentaras
+                            <span class="optional">(neprivaloma)</span>
+                        </label>
+
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            rows="5"
+                            placeholder="Parašyk, kurios temos kelia daugiausia sunkumų arba ką turėtume žinoti sudarydami grupę."
+                        ></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sutikimai</legend>
+
+                    <label class="consent">
+                        <input
+                            type="checkbox"
+                            name="privacyConsent"
+                            required
+                        >
+
+                        <span>
+                            Sutinku, kad mano pateikti asmens duomenys būtų
+                            tvarkomi registracijos ir susisiekimo tikslais,
+                            kaip nurodyta
+
+                            <a
+                                href="../privatumo-politika.html"
+                                target="_blank"
+                            >
+                                Privatumo politikoje
+                            </a>.
+                        </span>
+                    </label>
+
+                    <label class="consent">
+                        <input
+                            type="checkbox"
+                            name="rulesConsent"
+                            required
+                        >
+
+                        <span>
+                            Susipažinau ir sutinku su
+
+                            <a
+                                href="../paslaugu-taisykles.html"
+                                target="_blank"
+                            >
+                                Paslaugų teikimo taisyklėmis
+                            </a>.
+                        </span>
+                    </label>
+                </fieldset>
+
+                <button type="submit" class="button submit-button">
+                    Pateikti registraciją
+                </button>
+
+                <p id="form-message" class="form-message" hidden></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-contact">
+                <p><strong>Matemater</strong></p>
+                <p>El. paštas: info@matemater.lt</p>
+                <p>Vilnius, Lietuva</p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="../privatumo-politika.html">
+                    Privatumo politika
+                </a>
+
+                <a href="../paslaugu-taisykles.html">
+                    Paslaugų teikimo taisyklės
+                </a>
+
+                <a href="../index.html#kontaktai">
+                    Kontaktai
+                </a>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 Matemater. Visos teisės saugomos.
+        </p>
+
+    </footer>
+
+    <script src="./registracija.js"></script>
+</body>
+</html>
