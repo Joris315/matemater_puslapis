@@ -1,5 +1,12 @@
 const registrationForm = document.querySelector("#registration-form");
 
+const ageStatusInputs = document.querySelectorAll(
+  'input[name="studentAgeStatus"]'
+);
+
+const guardianSection =
+  document.querySelector("#guardian-section");
+
 if (registrationForm) {
   const registrationTypeInputs = document.querySelectorAll(
     'input[name="registrationType"]'
@@ -66,6 +73,24 @@ if (registrationForm) {
     updateAddFriendButton();
   }
 
+function updateGuardianSection() {
+  const selectedAgeStatus = document.querySelector(
+    'input[name="studentAgeStatus"]:checked'
+  );
+
+  const studentIsMinor =
+    selectedAgeStatus?.value === "minor";
+
+  guardianSection.hidden = !studentIsMinor;
+
+  const guardianInputs =
+    guardianSection.querySelectorAll(".guardian-input");
+
+  guardianInputs.forEach((input) => {
+    input.required = studentIsMinor;
+  });
+}
+
   function showMessage(message, type) {
     formMessage.textContent = message;
     formMessage.classList.remove(
@@ -86,9 +111,13 @@ if (registrationForm) {
       block: "center"
     });
   }
-
+  
   registrationTypeInputs.forEach((input) => {
     input.addEventListener("change", updateFriendsSection);
+  });
+
+  ageStatusInputs.forEach((input) => {
+  input.addEventListener("change", updateGuardianSection);
   });
 
   addFriendButton.addEventListener("click", () => {
@@ -192,6 +221,7 @@ if (registrationForm) {
         registrationForm.reset();
         resetFriendsList();
         updateFriendsSection();
+        updateGuardianSection();
 
         showMessage(
           "Registracija sėkmingai išsiųsta! Netrukus su tavimi susisieksime.",
@@ -224,4 +254,5 @@ if (registrationForm) {
 
   updateFriendsSection();
   updateAddFriendButton();
+  updateGuardianSection();
 }

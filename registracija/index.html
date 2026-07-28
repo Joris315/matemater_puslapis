@@ -211,6 +211,111 @@
                             >
                         </div>
 
+                    <div class="form-group form-group-full">
+                        <span class="form-label">
+                            Ar mokinys yra pilnametis?
+                        </span>
+
+                        <div class="age-options">
+
+                            <label class="radio-option">
+                                <input
+                                    type="radio"
+                                    name="studentAgeStatus"
+                                    value="adult"
+                                    required
+                                >
+                                Esu pilnametis
+                            </label>
+
+                            <label class="radio-option">
+                                <input
+                                    type="radio"
+                                    name="studentAgeStatus"
+                                    value="minor"
+                                    required
+                                >
+                                Esu nepilnametis
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div
+                        id="guardian-section"
+                        class="guardian-section form-group-full"
+                        hidden
+                    >
+                        <h3>Tėvo, mamos arba globėjo informacija</h3>
+
+                        <p class="form-explanation">
+                            Šie duomenys reikalingi, kad galėtume susisiekti
+                            dėl nepilnamečiui teikiamų mokamų paslaugų.
+                        </p>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="guardian-first-name">
+                                    Atstovo vardas
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="guardian-first-name"
+                                    name="guardianFirstName"
+                                    class="guardian-input"
+                                    autocomplete="given-name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="guardian-last-name">
+                                    Atstovo pavardė
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="guardian-last-name"
+                                    name="guardianLastName"
+                                    class="guardian-input"
+                                    autocomplete="family-name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="guardian-phone">
+                                    Atstovo telefono numeris
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="guardian-phone"
+                                    name="guardianPhone"
+                                    class="guardian-input"
+                                    autocomplete="tel"
+                                    placeholder="+370 600 00000"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="guardian-email">
+                                    Atstovo el. pašto adresas
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="guardian-email"
+                                    name="guardianEmail"
+                                    class="guardian-input"
+                                    autocomplete="email"
+                                    placeholder="vardas@example.com"
+                                >
+                            </div>
+
+                        </div>
+                    </div>                        
+
                     </div>
                 </fieldset>
 
