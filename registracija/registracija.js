@@ -8,6 +8,9 @@ if (registrationForm) {
   const friendsSection = document.querySelector("#friends-section");
   const friendsList = document.querySelector("#friends-list");
   const addFriendButton = document.querySelector("#add-friend-button");
+  const submitButton = registrationForm.querySelector(
+    'button[type="submit"]'
+  );
   const formMessage = document.querySelector("#form-message");
 
   const maxFriends = 5;
@@ -48,6 +51,40 @@ if (registrationForm) {
       addFriendButton.textContent =
         "+ Pridėti dar vieną draugą";
     }
+  }
+
+  function resetFriendsList() {
+    const friendEntries =
+      friendsList.querySelectorAll(".friend-entry");
+
+    friendEntries.forEach((entry, index) => {
+      if (index > 0) {
+        entry.remove();
+      }
+    });
+
+    updateAddFriendButton();
+  }
+
+  function showMessage(message, type) {
+    formMessage.textContent = message;
+    formMessage.classList.remove(
+      "form-message-success",
+      "form-message-error"
+    );
+
+    formMessage.classList.add(
+      type === "success"
+        ? "form-message-success"
+        : "form-message-error"
+    );
+
+    formMessage.hidden = false;
+
+    formMessage.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
   }
 
   registrationTypeInputs.forEach((input) => {
@@ -119,7 +156,7 @@ if (registrationForm) {
     }
   });
 
-  registrationForm.addEventListener("submit", (event) => {
+  registrationForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const selectedTimes = registrationForm.querySelectorAll(
@@ -127,19 +164,62 @@ if (registrationForm) {
     );
 
     if (selectedTimes.length === 0) {
-      alert("Pasirink bent vieną tinkamą užsiėmimų laiką.");
+      showMessage(
+        "Pasirink bent vieną tinkamą užsiėmimų laiką.",
+        "error"
+      );
+
       return;
     }
 
-    formMessage.textContent =
-      "Registracijos forma užpildyta teisingai. Registracijos išsiuntimą prijungsime kitame etape.";
+    submitButton.disabled = true;
+    submitButton.textContent = "Siunčiama...";
 
-    formMessage.hidden = false;
+    formMessage.hidden = true;
 
-    formMessage.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
+    const formData = new FormData(registrationForm);
+
+    try {
+      const response = await fetch(registrationForm.action, {
+        method: registrationForm.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        registrationForm.reset();
+        resetFriendsList();
+        updateFriendsSection();
+
+        showMessage(
+          "Registracija sėkmingai išsiųsta! Netrukus su tavimi susisieksime.",
+          "success"
+        );
+      } else {
+        const responseData = await response.json();
+
+        let errorMessage =
+          "Registracijos išsiųsti nepavyko. Patikrink duomenis ir bandyk dar kartą.";
+
+        if (responseData.errors) {
+          errorMessage = responseData.errors
+            .map((error) => error.message)
+            .join(" ");
+        }
+
+        showMessage(errorMessage, "error");
+      }
+    } catch (error) {
+      showMessage(
+        "Nepavyko prisijungti prie registracijos sistemos. Patikrink interneto ryšį ir bandyk dar kartą.",
+        "error"
+      );
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Pateikti registraciją";
+    }
   });
 
   updateFriendsSection();
