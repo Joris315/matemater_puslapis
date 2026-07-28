@@ -1,299 +1,406 @@
-/* =========================
-   Reset
-========================= */
+
+html {
+  scroll-behavior: smooth;
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #f6fbf6;
-    color: #333;
-    line-height: 1.6;
+  margin: 0;
+  background-color: #ffffff;
+  color: #343a40;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 1.6;
 }
 
 h1,
 h2,
 h3 {
-    color: #1f2937;
+  margin-top: 0;
+  color: #0c5833;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.2;
 }
 
 h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
+  margin-bottom: 32px;
+  font-size: 32px;
+  text-align: center;
 }
 
-.hero,
-.forwho,
-.lessons,
-.whyus,
-.prices,
-.register,
-.contacts {
-    padding: 70px 10%;
+h3 {
+  font-size: 22px;
 }
 
-.forwho,
-.lessons,
-.whyus,
-.prices,
-.register,
-.contacts {
-    max-width: 1100px;
-    margin: 30px auto;
-    background: white;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+p {
+  font-size: 18px;
 }
 
-ul {
-    padding-left: 22px;
+a {
+  color: #0c5833;
+  text-decoration: none;
 }
 
-li {
-    margin-bottom: 10px;
+
+nav {
+  min-height: 130px;
+  padding: 20px 6%;
+  border-bottom: 3px solid #0c5833;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* =========================
-   Hero
-========================= */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: #0c5833;
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 54px;
+  height: 54px;
+  display: block;
+}
+
+.nav-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.nav-links a {
+  position: relative;
+  color: #0c5833;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+  background-color: #0c5833;
+
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+main {
+  width: 100%;
+}
+
+section {
+  padding: 80px 8%;
+}
+
 
 .hero {
-    min-height: 55vh;
+  min-height: 470px;
+  padding: 90px 8%;
 
-    background: linear-gradient(135deg, #39b54a, #2d9f42);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
 
-    color: white;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15)
+    ),
+    url("./images/matemater-hero-background.png");
 
-    display: flex;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 10px auto 30px;
+}
+
+
+.button {
+  display: inline-block;
+  padding: 13px 28px;
+
+  border: 2px solid #0c5833;
+  border-radius: 7px;
+
+  background-color: #0c5833;
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #0c5833;
+  transform: translateY(-2px);
+}
+
+
+.benefits {
+  background-color: #ffffff;
+}
+
+.benefits-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.benefit {
+  padding: 28px 24px;
+  border-left: 4px solid #0c5833;
+  border-radius: 7px;
+  background-color: #f3f8f5;
+  box-shadow: 0 5px 18px rgba(12, 88, 51, 0.08);
+}
+
+.benefit h3 {
+  margin-bottom: 6px;
+}
+
+.benefit p {
+  margin: 0;
+}
+
+
+.lessons {
+  background-color: #f3f8f5;
+}
+
+.lessons ol {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 30px;
+}
+
+.lessons li {
+  margin-bottom: 15px;
+  padding-left: 8px;
+  font-size: 18px;
+}
+
+.lessons li::marker {
+  color: #0c5833;
+  font-weight: bold;
+}
+
+.pricing {
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.price-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+
+  border: 2px solid #0c5833;
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(12, 88, 51, 0.12);
+}
+
+.price-card strong {
+  color: #0c5833;
+  font-size: 32px;
+}
+
+.price-card .button {
+  margin-top: 15px;
+}
+
+
+.registration {
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  background-color: #0c5833;
+  color: #ffffff;
+  text-align: center;
+}
+
+.registration h2 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.registration p {
+  margin-bottom: 30px;
+}
+
+.registration .button {
+  border-color: #ffffff;
+  background-color: #ffffff;
+  color: #0c5833;
+}
+
+.registration .button:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.footer {
+  padding: 35px 8% 20px;
+
+  border-top: 1px solid #d7e4dc;
+  background-color: #ffffff;
+  color: #5c6560;
+
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.footer-contact strong {
+  color: #0c5833;
+  font-size: 16px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px 25px;
+}
+
+.footer-links a {
+  color: #5c6560;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #0c5833;
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 25px !important;
+  padding-top: 15px;
+
+  border-top: 1px solid #e5ebe7;
+  text-align: center;
+}
+
+
+
+@media (max-width: 900px) {
+  nav {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
+  }
 
-    text-align: center;
-
-    padding: 40px 8%;
-}
-
-.hero h1 {
-    color: white;
-    font-size: clamp(2rem, 5vw, 4rem);
-    max-width: 850px;
-    margin-bottom: 35px;
-}
-
-.hero button {
-    padding: 16px 38px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: white;
-    color: #2d9f42;
-
-    font-size: 1rem;
-    font-weight: 700;
-
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.hero button:hover {
-    background: #ecfdf0;
-    transform: translateY(-3px);
-}
-
-/* =========================
-   Lessons
-========================= */
-
-.lessons iframe {
-    width: 100%;
-    height: 350px;
-    margin-top: 30px;
-
-    border: none;
-    border-radius: 12px;
-}
-
-/* =========================
-   Prices
-========================= */
-
-.prices {
-    display: flex;
+  .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 20px 35px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.prices h2 {
-    width: 100%;
-    margin-bottom: 10px;
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+
+  nav {
+    min-height: auto;
+  }
+
+  .logo {
+    font-size: 35px;
+  }
+
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 400px;
+    padding: 70px 6%;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card {
+    padding: 30px 20px;
+  }
+
+  .footer-content {
+  flex-direction: column;
 }
 
-.price {
-    flex: 1 1 260px;
-    max-width: 320px;
-
-    background: #f7fff8;
-
-    border: 2px solid #d9f4dd;
-    border-radius: 16px;
-
-    padding: 35px 25px;
-
-    text-align: center;
-
-    transition: 0.25s;
+.footer-links {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
 }
-
-.price:hover {
-    transform: translateY(-6px);
-    border-color: #39b54a;
-}
-
-.price h3:first-child {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.price h3:last-child {
-    font-size: 2rem;
-    color: #2d9f42;
-}
-
-/* =========================
-   Registration
-========================= */
-
-form {
-    max-width: 520px;
-    margin: auto;
-}
-
-label {
-    font-weight: 600;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    width: 100%;
-
-    padding: 13px;
-
-    margin: 8px 0 18px;
-
-    border: 1px solid #ccc;
-    border-radius: 8px;
-
-    font-size: 1rem;
-}
-
-input[type="radio"] {
-    margin: 10px 8px 15px 0;
-}
-
-input[type="submit"] {
-    width: 100%;
-
-    margin-top: 20px;
-    padding: 14px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #2d9f42;
-    color: white;
-
-    font-size: 1rem;
-    font-weight: 700;
-
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-input[type="submit"]:hover {
-    background: #227835;
-}
-
-/* =========================
-   Contacts
-========================= */
-
-.contacts ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contacts li {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-}
-
-/* =========================
-   Mobile
-========================= */
-
-@media (max-width: 768px) {
-
-    .hero {
-        min-height: 40vh;
-        padding: 35px 8%;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .forwho,
-    .lessons,
-    .whyus,
-    .prices,
-    .register,
-    .contacts {
-        padding: 45px 7%;
-    }
-
-    .lessons iframe {
-        height: 250px;
-    }
-
-    /* Larger registration form */
-
-    label {
-        font-size: 1.05rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-        font-size: 1.1rem;
-        padding: 16px;
-    }
-
-    input[type="submit"] {
-        font-size: 1.1rem;
-        padding: 18px;
-    }
-
-    /* Better pricing cards */
-
-    .price {
-        max-width: 100%;
-        padding: 40px 30px;
-    }
-
-    .price h3:first-child {
-        font-size: 1.35rem;
-    }
-
-    .price h3:last-child {
-        font-size: 2.3rem;
-    }
 }

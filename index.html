@@ -1,117 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<script src='script.js'></script>
-		<link rel='stylesheet' href='style.css'>
-	</head>
-	<body>
-		<div class='hero'>
-			<h1>Matematikos korepetitoriai 11-12 klasės egzaminams</h1>
-			<button>Registruokis</button>
-		</div>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="./images/matemater-logo.svg">
+    <title>Matemater</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-		<div class='forwho'>
-			<h2>Kam galime padėti</h2>
-			<ul>
-				<li>Bijantiems, kad neišlaikys egzamino</li>
-				<li>Nerimaujantiems, kad išlaikys egzaminą ne pakankamai gerai</li>
-				<li>Norimtiems užpildyti žinių spragas</li>
-				<li>Norintiems pasiruošti 2 valandų trukmės egzaminui</li>
-			</ul>
-		</div>
+<body>
+    <nav>
+    <a href="index.html" class="logo">
+        <img src="./images/matemater-logo.svg" alt="Matemater logotipas">
+        <span>Matemater</span>
+    </a>
 
-		<div class='lessons'>
-			<h2>Kaip vyksta pamokos</h2>
-			<ul>
-				<li>Gyvai</li>
-				<li>Vilniaus Vytauto Didžiojo gimanazijoje</li>
-				<li>Vienas mokinys su vienu mokytoju</li>
-				<li>60 min</li>
-			</ul>
+    <div class="nav-links">
+        <a href="apie">Apie mus</a>
+        <a href="kaina">Kaina</a>
+        <a href="kontaktai">Kontaktai</a>
+        <a href="registracija">Registracija</a>
+    </div>
+    </nav>
+    <main>
+    
+    <section class="hero">
+        <h1>Pažink matematiką giliau</h1>
 
-			<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=25.28382182121277%2C54.67593397877047%2C25.296707153320316%2C54.67994739123716&amp;layer=hot&amp;marker=54.67793765859524%2C25.29026986002566" style="border: 1px solid black"></iframe><br/>
-		</div>
+        <p>
+        Gyvos matematikos pamokos 11–12 klasių mokiniams Vilniuje.
+        Renkamos mažos grupės egzaminų pasiruošimui.
+        </p>
+
+        <a class="button" href="registracija.html">Registruotis į pamoką</a>
+    </section>
+
+    <section class="benefits" id="apie">
+        <h2>Privalumai</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit">
+            <h3>Mažos grupės</h3>
+            <p>
+                Grupėje mokosi 4-6 mokiniai, todėl galima skirti dėmesio
+                kiekvienam mokiniui. 
+            </p>
+            </div>
+
+            <div class="benefit">
+            <h3>Ugdomos gilios matematikos žinios</h3>
+            <p>
+                Mokiniai ne tik mato, kaip spręsti uždavinius, tačiau mokosi
+                ir paaiškinti uždavinių sprendimus kolegoms, taip gilindami 
+                savo žinias.
+            </p>
+            </div>
+
+            <div class="benefit">
+            <h3>Pasiruošimas VBE</h3>
+            <p>
+                Nuoseklus pasiruošimas VBE. Nagrinėjamos visos atitinkamos klasės temos, 
+                taip pat užduodami namų darbai atsižvelgiant į mokinio silpnąsias vietas.
+            </p>
+            </div>
+
+            <div class="benefit">
+            <h3>Bandomieji egzaminai</h3>
+            <p>
+                Bandomieji egzaminai rengiami bent kartą per du mėnesius iš praeitų temų. 
+                Taip mokiniai įgyja praktikos dirbant egzamino aplinkybėmis. Taip pat 
+                gauna įvertinimus ir pastabas, kuriose temose reikėtų daugiau padirbėti.
+            </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="lessons">
+        <h2>Užsiėmimų eiga</h2>
+
+        <ul>
+        <li>Užsiregistruoji į užsiėmimus.</li>
+        <li>Po registracijos atlieki bandomąjį testą.</li>
+        <li>Pamokos vyksta gyvai Vilniuje.</li>
+        <li>Vienas užsiėmimas trunka 1 valandą.</li>
+        <li>Vyksta du užsiėmimai per savaitę.</li>
+        <li>Aiškinamės teoriją ir kartu sprendžiame uždavinius.</li>
+        <li>Gauni individualių užduočių savarankiškai praktikai.</li>
+        <li>Kartą per du mėnesius rašomas bandomasis egzaminas.</li>
+        </ul>
+    </section>
+    
+
+    <!-- Kaina -->
+    <section class="pricing" id="kaina">
+        <h2>Kaina ir grupės dydis</h2>
+
+        <div class="price-card">
+        <h3>Grupinis matematikos užsiėmimas</h3>
+        <p><strong>20 €</strong> už 1 valandos užsiėmimą</p>
+        <p> 4-6 mokiniai grupėje</p>
+        <p></p>
+
+        <a class="button" href="registracija.html">Registruotis</a>
+        </div>
+    </section>
 
 
-		<div class='whyus'>
-			<h2>Kodėl verta rinktis mus</h2>
-			<ul>
-				<li>Padedame užpildyti spragas likusias nuo ankstesnių klasių</li>
-				<li>Padedame įtvirtinti jau turimas žinias</li>
-				<li>Paspartinam uždavinių sprendimo greitį</li>
-				<li>Kasmėnesiniais bandomaisiais egzaminais pratiname prie 2h trunkančio VBE</li>
-				<li>Kartojame anksčiau eitas temas, kad nebūtų išmoktos, bet pamirštos</li>
-				<li>Prisitaikome prie individualių mokinio poreikių bei galimybių</li>
-			</ul>
-		</div>
+    <!-- Registracija -->
+    <section class="registration" id="registration">
+        <h2>Pasiruošęs sustiprinti matematikos žinias?</h2>
 
-			<div class='prices'>	
-				<h2>Kainos</h2>
-				<div class='price'>	
-				<h3>Viena savaitinė pamoka</h3>
-				<h3>30€ už pamoką</h3>
-				</div>
-	
-				<div class='price'>	
-				<h3>Dvi savaitinės pamoka</h3>
-				<h3>25€ už pamoką</h3>
-				</div>
+        <p>
+        Užsiregistruok ir priskirsime tave į mokymosi grupę.
+        </p>
 
-				<div class='price'>	
-				<h3>Ekstra pamoka</h3>
-				<h3>25€ už pamoką</h3>
-				</div>
-			</div>
+        <a class="button" href="registracija.html">Registruotis į pamoką</a>
+    </section>
+    </main>
+    
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-contact" id="kontaktai>
+        <p><strong>Matemater</strong></p>
+        <p>El. paštas: info@matemater.lt</p>
+        <p>Vilnius, Lietuva</p>
+        </div>
 
-		<!--
+        <div class="footer-links">
+        <a href="privatumo-politika.html">Privatumo politika</a>
+        <a href="paslaugu-taisykles.html">Paslaugų teikimo taisyklės</a>
+        <a href="kontaktai.html">Kontaktai</a>
+        </div>
+    </div>
 
-		<div class='faq'>
-			<h2>DUK</h2>
-			<ul>
-				<li>Ar galima mokytis nuotoliniu?</li>
-				<li>Ar galima tėvams ateiti kartu į pamoką?</li>
-				<li>Ar pasimokęs gausiu 100?</li>
-				<li>Ar pasimokęs tikrai išlaikysiu?</li>
-				<li>Ar galima pigiau?</li>
-			</ul>
-		</div>
+    <p class="copyright">
+        &copy; 2026 Matemater. Visos teisės saugomos.
+    </p>
+    </footer>
 
-		--!>
-
-		<div class='register'>
-			<h2>Registracija</h2>
-			<form>
-				<label for="name">Mokinio vardas</label>
-				<br>
-  				<input type="text" id="name" name="name">
-				<br>
-				<label for="email">El. paštas</label>
-				<br>
-  				<input type="email" id="email" name="email">
-				<br>
-				<label for="phone">Telefono nr.</label>
-				<br>
-  				<input type="tel" id="phone" name="phone" pattern="[0-9]{9}">
-				<br>
-  				<input type="radio" id="sessions1" name="sessions" value="1">
-				<label for="sessions1">1 kartas per savaitę</label>
-				<br>
-  				<input type="radio" id="sessions2" name="sessions" value="2">
-				<label for="sessions2">2 kartai per savaitę</label>
-				<br>
-  				<input type="submit" value="Pateikti">
-			</form>
-		</div>
-
-		<div class='contacts'>
-			<h2>Kontaktai</h2>
-			<ul>
-				<li>matemater@gmail.com</li>
-				<li>Messenger nuoroda</li>
-			</ul>
-
-		</div>
-	
-	</body>
+    <script src="main.js"></script>
+</body>
 </html>
