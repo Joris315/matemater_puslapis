@@ -301,6 +301,8 @@ legend {
   gap: 9px;
 
   cursor: pointer;
+
+  flex: 1;
 }
 
 .radio-option:has(input:checked) {
@@ -310,6 +312,7 @@ legend {
 
 .radio-option input {
   accent-color: #0c5833;
+  width: 14px;
 }
 
 .guardian-section {
