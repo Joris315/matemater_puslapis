@@ -330,19 +330,73 @@ section {
   text-align: center;
 }
 
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #0c5833;
+  font-size: 32px;
+  cursor: pointer;
+}
 
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #0c5833;
+  font-size: 32px;
+  cursor: pointer;
+}
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   nav {
-    flex-direction: column;
-    gap: 20px;
+    position: relative;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+
+  .menu-button {
+    display: block;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px 35px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    background-color: white;
+    border-bottom: 3px solid #0c5833;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
   }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 16px 20px;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo span {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 900px) {
 
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -361,24 +415,6 @@ section {
 
   section {
     padding: 60px 6%;
-  }
-
-  nav {
-    min-height: auto;
-  }
-
-  .logo {
-    font-size: 35px;
-  }
-
-  .logo img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 12px;
   }
 
   .hero {
